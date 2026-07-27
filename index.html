@@ -9,6 +9,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
   
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -24,15 +26,15 @@
         <a href="#blog">Blog</a>
         <a href="#contacto">Contacto</a>
       </nav>
-      <a href="#contacto" class="boton boton-primario boton-chico">Descargar CV</a>
+      <a href="#" id="btn-descargar-cv" class="boton boton-primario boton-chico">Descargar CV</a>
     </div>
   </header>
 
   <main>
-    <section id="inicio" class="seccion-hero contenedor">
+    <section id="inicio" class="seccion-hero contenedor animar-scroll">
       <div class="contenido-hero">
-        <span class="insignia">✦ Java Full Stack Developer & HR Tech</span>
-        <h1 class="titulo-hero">Creando software limpio centrado en la <em>experiencia humana</em></h1>
+        <span class="insignia">✦ Full Stack Developer & HR Tech</span>
+        <h1 class="titulo-hero">Creando software limpio centrado en la <br><em>experiencia humana</em></h1>
         <p class="texto-hero">
           Diseño soluciones tecnológicas que entienden la psicología detrás del usuario final, optimizando procesos de negocio e impulsando la inclusión digital.
         </p>
@@ -41,24 +43,25 @@
         </div>
       </div>
       <div class="contenedor-imagen-hero">
-        <img src="assets/foto-perfil.png" alt="Joyce Martinez" class="imagen-hero">
+        <div class="fondo-circulo-imagen">
+            <img src="assets/foto-perfil.png" alt="Joyce Martinez" class="imagen-hero">
+        </div>
       </div>
     </section>
 
-    <section id="portafolio" class="seccion contenedor">
+    <section id="portafolio" class="seccion contenedor animar-scroll">
       <div class="encabezado-seccion">
         <h2>Portafolio</h2>
         <p>Selección de proyectos destacados. Desde maquetación frontend inspiracional hasta la arquitectura backend para comercio electrónico inclusivo.</p>
       </div>
 
       <div class="rejilla-portafolio">
-        
         <article class="tarjeta tarjeta-proyecto">
           <img src="assets/proyecto-yeya.jpeg" alt="La Tiendita de la Yeya E-commerce" class="imagen-tarjeta">
           <div class="cuerpo-tarjeta">
             <span class="etiqueta-tarjeta">Java Full Stack / E-commerce</span>
             <h3>La Tiendita de la Yeya</h3>
-            <p>Plataforma de e-commerce de bisutería con identidad. Desarrollada para automatizar el flujo de compra, digitalizar el catálogo con filtros avanzados y recolectar métricas para investigación de mercado con enfoque inclusivo.</p>
+            <p>Plataforma de e-commerce de bisutería con identidad. Desarrollada para automatizar el flujo de compra, digitalizar el catálogo con filtros avanzados y recolectar métricas para investigación de mercado.</p>
             <div class="acciones-tarjeta">
               <a href="#" class="boton boton-primario boton-chico">Ver Demo</a>
               <a href="#" class="boton boton-contorno boton-chico">Código ↗</a>
@@ -71,26 +74,25 @@
           <div class="cuerpo-tarjeta">
             <span class="etiqueta-tarjeta">Frontend / UI Design</span>
             <h3>Rendimiento y Revolución</h3>
-            <p>Landing page interactiva que conecta la épica de las adelitas con el deporte actual. Incluye un catálogo estilizado de alta costura deportiva y un formulario interactivo para la comunidad y preventa.</p>
+            <p>Landing page interactiva que conecta la épica de las adelitas con el deporte actual. Incluye un catálogo estilizado de alta costura deportiva y un formulario interactivo para preventa.</p>
             <div class="acciones-tarjeta">
               <a href="#" class="boton boton-primario boton-chico">Ver Demo</a>
               <a href="#" class="boton boton-contorno boton-chico">Código ↗</a>
             </div>
           </div>
         </article>
-
       </div>
     </section>
 
-    <section id="sobre-mi" class="seccion contenedor">
+    <section id="sobre-mi" class="seccion contenedor animar-scroll">
       <div class="rejilla-acerca">
         <div class="contenido-acerca">
-          <h2>Tecnología con <em>identidad y propósito</em></h2>
+          <h2>De la psicología a la <br><em>ingeniería</em></h2>
           <p>
             Mi viaje comenzó en la psicología organizacional y People Analytics, donde entendí que la tecnología es la herramienta más poderosa para crear espacios inclusivos y escalar el impacto en las personas.
           </p>
           <p>
-            Al dar el salto al desarrollo Java Full Stack, descubrí cómo el código puede resolver problemas reales de negocio y, al mismo tiempo, conectar con las comunidades. Proyectos como <em>La Tiendita de la Yeya</em> y la <em>Tienda Deportiva Adelitas</em> reflejan mi visión: construir software que no solo sea técnicamente robusto, sino que empodere a sus usuarias, ofrezca accesibilidad y cuente una narrativa con significado.
+            Al dar el salto al desarrollo Java Full Stack, descubrí cómo el código puede resolver problemas reales de negocio y, al mismo tiempo, conectar con las comunidades. Proyectos como <em>La Tiendita de la Yeya</em> y la <em>Tienda Deportiva Adelitas</em> reflejan mi visión.
           </p>
           <p>
             Fuera de la consola de código, la fotografía me enseñó a observar los detalles y la luz, una mirada atenta que hoy aplico al diseñar interfaces limpias, intuitivas y centradas genuinamente en el ser humano.
@@ -104,15 +106,57 @@
       </div>
     </section>
 
-    <section id="cv" class="seccion contenedor">
+    <section id="habilidades" class="seccion contenedor animar-scroll">
       <div class="encabezado-seccion">
+        <h2 style="text-align: center;">Stack Tecnológico</h2>
+      </div>
+      <div class="carrusel-contenedor">
+        <div class="carrusel-track" id="track-tecnologias">
+          <div class="tarjeta-tech">
+            <i class="devicon-html5-plain colored icono-tech"></i>
+            <h4>HTML5</h4>
+          </div>
+          <div class="tarjeta-tech">
+            <i class="devicon-css3-plain colored icono-tech"></i>
+            <h4>CSS3</h4>
+          </div>
+          <div class="tarjeta-tech">
+            <i class="devicon-javascript-plain colored icono-tech"></i>
+            <h4>JavaScript</h4>
+          </div>
+          <div class="tarjeta-tech">
+            <i class="devicon-java-plain colored icono-tech"></i>
+            <h4>Java</h4>
+          </div>
+          <div class="tarjeta-tech">
+            <i class="devicon-python-plain colored icono-tech"></i>
+            <h4>Python</h4>
+          </div>
+          <div class="tarjeta-tech">
+            <i class="devicon-r-original colored icono-tech"></i>
+            <h4>RStudio</h4>
+          </div>
+          <div class="tarjeta-tech">
+            <i class="devicon-github-original icono-tech" style="color: var(--texto-principal);"></i>
+            <h4>GitHub</h4>
+          </div>
+          <div class="tarjeta-tech">
+            <i class="devicon-mysql-plain colored icono-tech"></i>
+            <h4>MySQL</h4>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="cv" class="seccion contenedor animar-scroll">
+      <div class="encabezado-seccion text-center" style="margin: 0 auto 4rem auto; text-align: center;">
         <h2>Trayectoria</h2>
-        <p>Un camino recorrido entre la analítica de datos, el talento humano y la ingeniería de software.</p>
+        <p>Un camino recorrido entre la analítica de datos, el talento humano y la ingeniería efectiva.</p>
       </div>
 
       <div class="rejilla-cv">
         <div class="columna-cv">
-          <h3 class="titulo-categoria-cv">📂 Experiencia</h3>
+          <h3 class="titulo-categoria-cv"><span style="color:var(--acento-primario)">💼</span> Experiencia</h3>
           
           <div class="elemento-linea-tiempo">
             <span class="fecha-linea-tiempo">2026 - Actualidad</span>
@@ -127,28 +171,21 @@
             <p class="empresa-linea-tiempo">Intercam Banco</p>
             <p>Diseño de dashboards analíticos y automatización del flujo de Onboarding reduciendo tiempos operativos de procesamiento en un 50%.</p>
           </div>
-          
-          <div class="elemento-linea-tiempo">
-            <span class="fecha-linea-tiempo">2023</span>
-            <h4>Consultora de Business Analytics</h4>
-            <p class="empresa-linea-tiempo">McCormick (Proyecto Académico)</p>
-            <p>Implementación de modelos de Forecasting para predicción de ventas mediante análisis estadístico masivo (sell-in/sell-out).</p>
-          </div>
         </div>
 
         <div class="columna-cv">
-          <h3 class="titulo-categoria-cv">🎓 Educación</h3>
+          <h3 class="titulo-categoria-cv"><span style="color:var(--acento-primario)">🎓</span> Educación</h3>
           
           <div class="elemento-linea-tiempo">
             <span class="fecha-linea-tiempo">2026</span>
             <h4>Bootcamp Desarrollador Java Full Stack</h4>
             <p class="empresa-linea-tiempo">Generation México</p>
-            <p>Entrenamiento intensivo en Java, MySQL, HTML5/CSS3, JavaScript, Git/GitHub y metodologías ágiles (Scrum).</p>
+            <p>Más de 500 horas de entrenamiento intensivo en Java, MySQL, HTML5/CSS3, JavaScript, Git/GitHub y metodologías ágiles (Scrum).</p>
           </div>
 
           <div class="elemento-linea-tiempo">
             <span class="fecha-linea-tiempo">2020 - 2024</span>
-            <h4>Lic. en Desarrollo de Talento y Cultura</h4>
+            <h4>Lic. en Psicología Organizacional</h4>
             <p class="empresa-linea-tiempo">Tec de Monterrey</p>
             <p>Especialización en Analítica para los Negocios. Enfoque en People Analytics, comportamiento organizacional e inclusión.</p>
           </div>
@@ -156,11 +193,11 @@
       </div>
     </section>
 
-    <section id="blog" class="seccion contenedor">
+    <section id="blog" class="seccion contenedor animar-scroll">
       <div class="encabezado-seccion-flex">
         <div>
           <h2>Blog</h2>
-          <p>Reflexiones sobre código, datos y el impacto en las personas.</p>
+          <p>Reflexiones sobre tecnología y personas.</p>
         </div>
         <a href="#" class="enlace-flecha">Ver todos los artículos →</a>
       </div>
@@ -170,13 +207,13 @@
         <div class="cuerpo-blog">
           <span class="etiqueta-tarjeta">Desarrollo & Cultura</span>
           <h3>De entender equipos a construir sistemas</h3>
-          <p>Cómo mi formación en psicología organizacional me dio una perspectiva inclusiva y enfocada en el usuario para resolver problemas mediante el desarrollo Full Stack.</p>
-          <a href="#" class="leer-mas">Leer artículo →</a>
+          <p>Cómo los principios de la psicología organizacional me dieron una mirada pragmática y enfocada en la experiencia humana al escribir código.</p>
+          <button id="btn-leer-blog" class="leer-mas" style="background:none; border:none; padding:0; cursor:pointer;">Leer artículo →</button>
         </div>
       </article>
     </section>
 
-    <section id="contacto" class="banner-contacto">
+    <section id="contacto" class="banner-contacto animar-scroll">
       <div class="contenedor rejilla-contacto">
         <div class="informacion-contacto">
           <h2>Hablemos de tu próximo proyecto</h2>
@@ -213,5 +250,28 @@
     </div>
   </footer>
 
+  <div id="modal-cv" class="ventana-modal">
+    <div class="contenido-modal modal-largo">
+      <span class="cerrar-modal" id="cerrar-cv">&times;</span>
+      <h3 style="margin-bottom: 1rem;">Mi Currículum Vitae</h3>
+      <iframe src="assets/CV_Joyce_Martinez.pdf" width="100%" height="500px" style="border: none; border-radius: 8px;"></iframe>
+    </div>
+  </div>
+
+  <div id="modal-blog" class="ventana-modal">
+    <div class="contenido-modal">
+      <span class="cerrar-modal" id="cerrar-blog">&times;</span>
+      <img src="assets/blog-1.jpg" alt="Imagen Blog" style="width: 100%; height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 1rem;">
+      <span class="etiqueta-tarjeta">Desarrollo & Cultura</span>
+      <h3 style="margin-bottom: 1rem;">De entender equipos a construir sistemas</h3>
+      <div style="color: var(--texto-secundario); font-size: 0.95rem; line-height: 1.8;">
+        <p style="margin-bottom: 1rem;">Cuando comencé mi carrera en Psicología Organizacional, mi objetivo principal era entender qué motivaba a los equipos y cómo hacer que las organizaciones funcionaran mejor desde su núcleo: las personas.</p>
+        <p style="margin-bottom: 1rem;">Sin embargo, al adentrarme en People Analytics, descubrí un cuello de botella. Las ideas estaban ahí, pero la tecnología para implementarlas a menudo fallaba. Fue entonces cuando decidí dar el salto al código.</p>
+        <p>Aprender Java y JavaScript me permitió convertirme en la arquitecta de las soluciones. Hoy, construyo software con la misma empatía con la que solía realizar diagnósticos organizacionales.</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
 </body>
 </html>

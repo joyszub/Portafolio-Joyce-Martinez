@@ -1,16 +1,16 @@
 :root {
-  --fondo-principal: #FAF7F2;       
-  --fondo-tarjeta: #FFFFFF;        
-  --fondo-oscuro: #C47A5A;         
-  --fondo-pie: #1C1A17;             
+  --fondo-principal: #FAF7F2;
+  --fondo-tarjeta: #FFFFFF;
+  --fondo-oscuro: #C47A5A;
+  --fondo-pie: #1C1A17;
   
-  --texto-principal: #23211E;      
-  --texto-secundario: #666059;      
-  --texto-claro: #FFFFFF;           
+  --texto-principal: #23211E;
+  --texto-secundario: #666059;
+  --texto-claro: #FFFFFF; 
   
-  --acento-primario: #C47A5A;       
-  --acento-interactivo: #A86244;    
-  --color-borde: #E6DFD5;           
+  --acento-primario: #C47A5A; 
+  --acento-interactivo: #A86244;
+  --color-borde: #E6DFD5; 
 
   --fuente-titulos: 'Playfair Display', serif;
   --fuente-cuerpo: 'Plus Jakarta Sans', sans-serif;
@@ -21,7 +21,7 @@
   --radio-pildora: 50px;
 }
 
-/* ESTILOS BASE*/
+/*ESTILOS BASE*/
 * {
   margin: 0;
   padding: 0;
@@ -48,7 +48,7 @@ h1, h2, h3, h4 {
 }
 
 h2 {
-  font-size: 2.25rem;
+  font-size: 2.5rem;
   margin-bottom: 0.5rem;
 }
 
@@ -81,7 +81,7 @@ img {
 }
 
 .seccion {
-  padding: 5rem 0;
+  padding: 6rem 0;
 }
 
 .boton {
@@ -92,8 +92,17 @@ img {
   font-size: 0.95rem;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: var(--transicion);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
   text-align: center;
+}
+
+.boton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(196, 122, 90, 0.3);
+}
+
+.boton:active {
+  transform: translateY(0);
 }
 
 .boton-primario {
@@ -103,6 +112,7 @@ img {
 
 .boton-primario:hover {
   background-color: var(--acento-interactivo);
+  color: var(--texto-claro);
 }
 
 .boton-contorno {
@@ -128,7 +138,7 @@ img {
 .insignia {
   display: inline-block;
   padding: 0.4rem 1rem;
-  background-color: #F0ECE4;
+  background-color: rgba(196, 122, 90, 0.1);
   color: var(--acento-primario);
   border-radius: var(--radio-pildora);
   font-size: 0.85rem;
@@ -136,24 +146,26 @@ img {
   margin-bottom: 1rem;
 }
 
+/* Tarjetas con efecto 3D */
 .tarjeta {
   background-color: var(--fondo-tarjeta);
   border: 1px solid var(--color-borde);
   border-radius: var(--radio-grande);
   overflow: hidden;
-  transition: var(--transicion);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
 }
 
 .tarjeta:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 12px 24px rgba(0,0,0,0.05);
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: var(--acento-primario);
 }
 
-/* BARRA DE NAVEGACIÓN*/
+/*BARRA DE NAVEGACIÓN*/
 .barra-navegacion {
   position: sticky;
   top: 0;
-  background-color: rgba(250, 247, 242, 0.9);
+  background-color: rgba(250, 247, 242, 0.95);
   backdrop-filter: blur(10px);
   z-index: 1000;
   border-bottom: 1px solid var(--color-borde);
@@ -187,52 +199,67 @@ img {
   color: var(--acento-primario);
 }
 
-/*INICIO*/
+/* INICIO */
 .seccion-hero {
   display: grid;
-  grid-template-columns: 1.2fr 0.8fr;
+  grid-template-columns: 1fr 1fr;
   align-items: center;
   gap: 3rem;
-  padding: 6rem 0 4rem;
+  padding: 5rem 0;
 }
 
 .titulo-hero {
-  font-size: 3.2rem;
+  font-size: 3.8rem; 
   margin-bottom: 1.5rem;
 }
 
 .texto-hero {
   font-size: 1.15rem;
-  margin-bottom: 2rem;
-  max-width: 500px;
+  margin-bottom: 2.5rem;
+  max-width: 90%;
+}
+
+
+.contenedor-imagen-hero {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.fondo-circulo-imagen {
+  background-color: #FFFFFF;
+  border-radius: 200px 200px 200px 200px; 
+  padding: 1.5rem;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.05);
 }
 
 .imagen-hero {
-  border-radius: 200px 200px 20px 20px;
+  border-radius: 200px 200px 200px 200px;
+  width: 320px;
+  height: 400px;
   object-fit: cover;
-  box-shadow: 0 16px 32px rgba(0,0,0,0.08);
 }
 
 /*SECCIÓN PORTAFOLIO*/
 .encabezado-seccion {
-  margin-bottom: 3rem;
-  max-width: 600px;
+  margin-bottom: 3.5rem;
+  max-width: 650px;
 }
 
 .rejilla-portafolio {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+  gap: 2.5rem;
 }
 
 .imagen-tarjeta {
   width: 100%;
-  height: 220px;
+  height: 250px;
   object-fit: cover;
 }
 
 .cuerpo-tarjeta {
-  padding: 1.8rem;
+  padding: 2rem;
 }
 
 .etiqueta-tarjeta {
@@ -242,74 +269,403 @@ img {
   color: var(--acento-primario);
   font-weight: 700;
   display: block;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
 }
 
 .cuerpo-tarjeta h3 {
-  font-size: 1.3rem;
-  margin-bottom: 0.8rem;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
 }
 
 .cuerpo-tarjeta p {
   font-size: 0.95rem;
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .acciones-tarjeta {
   display: flex;
-  gap: 0.8rem;
+  gap: 1rem;
 }
 
+/*SECCIÓN ACERCA DE MÍ*/
+.rejilla-acerca {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.contenido-acerca p {
+  margin-bottom: 1.5rem;
+  font-size: 1.05rem;
+}
+
+.galeria-acerca {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto auto;
+  gap: 1.5rem;
+}
+
+.galeria-acerca .imagen-galeria {
+  border-radius: var(--radio-grande);
+  object-fit: cover;
+  width: 100%;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+}
+
+.galeria-acerca .imagen-galeria:nth-child(1) {
+  height: 200px;
+}
+.galeria-acerca .imagen-galeria:nth-child(2) {
+  height: 150px;
+  transform: translateY(20px);
+}
+.galeria-acerca .imagen-galeria:nth-child(3) {
+  grid-column: span 2;
+  height: 180px;
+}
+
+/*CARRUSEL DE TECNOLOGÍAS*/
+.carrusel-contenedor {
+  width: 100%;
+  overflow: hidden;
+  padding: 1rem 0 3rem 0;
+  position: relative;
+}
+
+.carrusel-contenedor::before,
+.carrusel-contenedor::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  width: 100px;
+  height: 100%;
+  z-index: 2;
+}
+
+.carrusel-contenedor::before {
+  left: 0;
+  background: linear-gradient(to right, var(--fondo-principal) 0%, transparent 100%);
+}
+
+.carrusel-contenedor::after {
+  right: 0;
+  background: linear-gradient(to left, var(--fondo-principal) 0%, transparent 100%);
+}
+
+.carrusel-track {
+  display: flex;
+  gap: 2rem;
+  width: max-content;
+  transition: transform 0.1s linear; 
+}
+
+.tarjeta-tech {
+  background-color: var(--fondo-tarjeta);
+  border: 1px solid var(--color-borde);
+  padding: 1.2rem 2.5rem;
+  border-radius: var(--radio-pildora);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  min-width: 200px;
+  justify-content: center;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.03);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.tarjeta-tech:hover {
+  transform: scale(1.05);
+  border-color: var(--acento-primario);
+  color: var(--acento-primario);
+}
+
+.icono-tech {
+  font-size: 2.2rem;
+  transition: transform 0.3s ease;
+}
+
+.tarjeta-tech:hover .icono-tech {
+  transform: scale(1.15) translateY(-2px);
+}
 
 /*SECCIÓN CV / TRAYECTORIA*/
 .rejilla-cv {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3rem;
+  gap: 4rem;
 }
 
 .titulo-categoria-cv {
-  font-size: 1.4rem;
-  margin-bottom: 1.8rem;
-  border-bottom: 2px solid var(--color-borde);
-  padding-bottom: 0.5rem;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
 }
 
 .elemento-linea-tiempo {
   position: relative;
-  padding-left: 1.5rem;
+  padding-left: 1.8rem;
   border-left: 2px solid var(--color-borde);
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
+}
+
+
+.elemento-linea-tiempo::before {
+  content: '';
+  position: absolute;
+  left: -6px;
+  top: 5px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: var(--acento-primario);
 }
 
 .fecha-linea-tiempo {
   font-size: 0.85rem;
   font-weight: 700;
   color: var(--acento-primario);
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .elemento-linea-tiempo h4 {
-  font-size: 1.1rem;
-  margin: 0.2rem 0;
+  font-size: 1.2rem;
+  margin: 0.4rem 0;
 }
 
 .empresa-linea-tiempo {
-  font-size: 0.9rem;
+  font-size: 0.95rem;
   font-weight: 600;
   color: var(--texto-principal);
+  margin-bottom: 0.8rem;
+}
+
+/*SECCIÓN BLOG*/
+.encabezado-seccion-flex {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 3rem;
+}
+
+.enlace-flecha {
+  color: var(--acento-primario);
+  font-weight: 600;
+}
+
+.tarjeta-blog {
+  display: grid;
+  grid-template-columns: 450px 1fr;
+  align-items: center;
+}
+
+.imagen-blog {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.cuerpo-blog {
+  padding: 3rem;
+}
+
+.leer-mas {
+  display: inline-block;
+  margin-top: 1.5rem;
+  color: var(--acento-primario);
+  font-weight: 700;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+/*SECCIÓN DE CONTACTO */
+.banner-contacto {
+  background-color: var(--fondo-oscuro);
+  color: var(--texto-claro);
+  padding: 6rem 0;
+  margin-top: 4rem;
+}
+
+.rejilla-contacto {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.informacion-contacto h2 {
+  color: var(--texto-claro);
+  font-size: 3.2rem;
+  margin-bottom: 1.5rem;
+}
+
+.informacion-contacto p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.15rem;
+  margin-bottom: 2.5rem;
+}
+
+.insignia-email-contacto {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: rgba(255, 255, 255, 0.15);
+  border-radius: var(--radio-pildora);
+  font-weight: 600;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.formulario-contacto {
+  background-color: var(--fondo-tarjeta);
+  padding: 3rem;
+  border-radius: var(--radio-grande);
+  color: var(--texto-principal);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
+
+.formulario-contacto h3 {
+  margin-bottom: 2rem;
+  font-size: 1.8rem;
+}
+
+.grupo-formulario {
+  margin-bottom: 1.5rem;
+}
+
+.grupo-formulario label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
   margin-bottom: 0.5rem;
+}
+
+.grupo-formulario input,
+.grupo-formulario textarea {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid var(--color-borde);
+  border-radius: var(--radio-chico);
+  font-family: inherit;
+  font-size: 1rem;
+  background-color: #FAFAFA;
+}
+
+.grupo-formulario input:focus,
+.grupo-formulario textarea:focus {
+  outline: none;
+  border-color: var(--acento-primario);
+  background-color: #FFF;
+}
+
+/*VENTANAS EMERGENTES*/
+.ventana-modal {
+  display: none; 
+  position: fixed;
+  z-index: 2000; 
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.65);
+  backdrop-filter: blur(5px); 
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.ventana-modal.mostrar {
+  display: flex;
+  opacity: 1;
+}
+
+.contenido-modal {
+  background-color: var(--fondo-tarjeta);
+  padding: 2.5rem;
+  border-radius: var(--radio-grande);
+  width: 90%;
+  max-width: 600px;
+  max-height: 90vh;
+  overflow-y: auto; 
+  position: relative;
+  transform: translateY(-30px);
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.3);
+}
+
+.contenido-modal.modal-largo {
+  max-width: 800px;
+}
+
+.ventana-modal.mostrar .contenido-modal {
+  transform: translateY(0); 
+}
+
+.cerrar-modal {
+  color: var(--texto-secundario);
+  position: absolute;
+  top: 15px;
+  right: 25px;
+  font-size: 32px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+.cerrar-modal:hover {
+  color: var(--acento-primario);
+}
+
+/*ANIMACIONES DE SCROLL*/
+.animar-scroll {
+  opacity: 0;
+  transform: translateY(50px); 
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animar-scroll.visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /*FOOTER*/
 .pie-pagina {
   background-color: var(--fondo-pie);
-  color: rgba(255, 255, 255, 0.6);
-  padding: 2rem 0;
-  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.5);
+  padding: 3rem 0;
+  font-size: 0.9rem;
   text-align: center;
 }
 
 .contenido-pie-pagina {
   display: flex;
   justify-content: space-between;
+}
+
+/*RESPONSIVE*/
+@media (max-width: 950px) {
+  .seccion-hero,
+  .rejilla-acerca,
+  .rejilla-cv,
+  .rejilla-contacto,
+  .tarjeta-blog {
+    grid-template-columns: 1fr;
+    gap: 3rem;
+  }
+  
+  .enlaces-nav {
+    display: none;
+  }
+  
+  .titulo-hero {
+    font-size: 2.8rem;
+  }
+  
+  .contenido-pie-pagina {
+    flex-direction: column;
+    gap: 1rem;
+  }
 }
