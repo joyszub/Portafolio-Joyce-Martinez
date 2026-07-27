@@ -45,6 +45,8 @@ h1, h2, h3, h4 {
   color: var(--texto-principal);
   font-weight: 700;
   line-height: 1.2;
+  width: 100%;
+  display: block;
 }
 
 h2 {
@@ -59,6 +61,8 @@ em {
 
 p {
   color: var(--texto-secundario);
+  text-align: justify; 
+  hyphens: auto;
 }
 
 a {
@@ -242,8 +246,25 @@ img {
 
 /*SECCIÓN PORTAFOLIO*/
 .encabezado-seccion {
-  margin-bottom: 3.5rem;
-  max-width: 650px;
+  margin: 0 auto 3.5rem auto;
+  width: 100%;
+  max-width: 100%; 
+  text-align: center; 
+}
+
+.encabezado-seccion h2 {
+  text-align: center;
+  width: 100%;
+  display: block;
+}
+
+.encabezado-seccion p {
+  width: 100%;
+  max-width: 100%;
+  text-align: justify; 
+  text-align-last: center; 
+  margin-top: 0.8rem;
+  line-height: 1.7;
 }
 
 .rejilla-portafolio {
@@ -320,6 +341,7 @@ img {
 .galeria-acerca .imagen-galeria:nth-child(2) {
   height: 150px;
   transform: translateY(20px);
+  object-position: bottom;
 }
 .galeria-acerca .imagen-galeria:nth-child(3) {
   grid-column: span 2;
@@ -668,4 +690,11 @@ img {
     flex-direction: column;
     gap: 1rem;
   }
+}
+
+.boton-con-icono {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
 }
